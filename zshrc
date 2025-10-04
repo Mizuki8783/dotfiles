@@ -30,6 +30,10 @@ export EDITOR=code
 # Load Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
+# Load Spark
+export SPARK_HOME=/opt/homebrew/opt/apache-spark/libexec
+export PATH=$SPARK_HOME/bin:$PATH
+
 # Load Java
 export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
 export PATH="$HOME/.jenv/bin:$PATH"
@@ -38,3 +42,15 @@ eval "$(jenv init -)"
 # Load NVM
 export NVM_DIR="$HOME/.nvm"
 source "$(brew --prefix nvm)/nvm.sh"
+
+# Set AWS CLI default profile 
+export AWS_PROFILE=palm-production
+
+# Display AWS profile notification
+echo ""
+echo "┌───────────────────────────────────┐"
+echo "│  🚀  AWS Profile: \033[1;32mpalm-production\033[0m │"
+echo "└───────────────────────────────────┘"
+echo ""
+
+
